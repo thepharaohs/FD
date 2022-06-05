@@ -174,10 +174,10 @@ div {
 .bxNfBD {
     border-radius: 50px;
     border: none;
-    background-color: var(--secondary);
+    background-color: #f3eadb;
     padding: 10px;
     font-weight: bold;
-    color: var(--secondary-text);
+    color: #bb9772;
     width: 100px;
     cursor: pointer;
 }
@@ -185,11 +185,11 @@ div {
 .cfBQLk {
     border-radius: 100%;
     border: none;
-    background-color: var(--primary);
+    background-color: #f3eadb;
     padding: 10px;
     font-weight: bold;
     font-size: 15px;
-    color: var(--primary-text);
+    color: #bb9772;
     width: 30px;
     height: 30px;
     cursor: pointer;
