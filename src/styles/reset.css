@@ -123,10 +123,7 @@ table {
   border-spacing: 0;
 }
 
-@font-face {
-  font-family: "coder";
-  src: local("coder"), url(font.woff) format("woff");
-}
+
 
 @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900&display=swap');
 
@@ -145,10 +142,6 @@ body {
   box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
-}
 
 body::-webkit-scrollbar {
   display: none;
