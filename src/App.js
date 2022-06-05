@@ -270,6 +270,11 @@ function App() {
                   1 {CONFIG.SYMBOL} costs {CONFIG.DISPLAY_COST}{" "}
                   {CONFIG.NETWORK.SYMBOL}.
                 </s.TextTitle>
+               <s.TextTitle
+                  style={{ textAlign: "center", color: "var(--accent-text)" }}
+                >
+                  "and costs zero if you,re whitelisted"
+                </s.TextTitle>
                 <s.SpacerXSmall />
                 <s.SpacerSmall />
                 {blockchain.account === "" ||
