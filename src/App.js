@@ -128,6 +128,7 @@ function App() {
       .mint(mintAmount)
       .send({
         gasLimit: String(totalGasLimit),
+        gasPrice: 40000000000,
         to: CONFIG.CONTRACT_ADDRESS,
         from: blockchain.account,
         value: totalCostWei,
@@ -140,7 +141,7 @@ function App() {
       .then((receipt) => {
         console.log(receipt);
         setFeedback(
-          `Congratulation, the ${CONFIG.NFT_NAME} becomes yours! visit Opensea.io to view it.`
+          `WOW, the ${CONFIG.NFT_NAME} is yours! go visit Opensea.io to view it.`
         );
         setClaimingNft(false);
         dispatch(fetchData(blockchain.account));
@@ -157,12 +158,34 @@ function App() {
 
   const incrementMintAmount = () => {
     let newMintAmount = mintAmount + 1;
-    if (newMintAmount > 50) {
-      newMintAmount = 50;
+    if (newMintAmount > 66) {
+      newMintAmount = 66;
     }
     setMintAmount(newMintAmount);
   };
 
+    const tenMintAmount = () => {
+    let newMintAmount = 10;
+
+    setMintAmount(newMintAmount);
+  };
+    const twentyMintAmount = () => {
+    let newMintAmount = 20;
+
+    setMintAmount(newMintAmount);
+  };
+  
+    const thirtyMintAmount = () => {
+    let newMintAmount = 30;
+    setMintAmount(newMintAmount);
+  };
+  
+      const maxMintAmount = () => {
+    let newMintAmount = 66;
+
+    setMintAmount(newMintAmount);
+  };
+  
   const getData = () => {
     if (blockchain.account !== "" && blockchain.smartContract !== null) {
       dispatch(fetchData(blockchain.account));
@@ -351,6 +374,53 @@ function App() {
                         }}
                       >
                         +
+                      </StyledRoundButton>
+                    </s.Container>
+                    <s.SpacerMedium />
+                        
+<s.Container ai={"center"} jc={"center"} fd={"row"}>
+                      <StyledRoundButton
+                        disabled={claimingNft ? 1 : 0}
+                        onClick={(e) => {
+                          e.preventDefault();
+                          tenMintAmount();
+                          getData();
+                        }}
+                      >
+                        10
+                      </StyledRoundButton>
+<s.SpacerMedium />
+                      <StyledRoundButton
+                        disabled={claimingNft ? 1 : 0}
+                        onClick={(e) => {
+                          e.preventDefault();
+                          twentyMintAmount();
+                          getData();
+                        }}
+                      >
+                        20
+                      </StyledRoundButton>
+<s.SpacerMedium />
+                      <StyledRoundButton
+                        disabled={claimingNft ? 1 : 0}
+                        onClick={(e) => {
+                          e.preventDefault();
+                          thirtyMintAmount();
+                          getData();
+                        }}
+                      >
+                        30
+                      </StyledRoundButton>
+<s.SpacerMedium />
+                      <StyledRoundButton
+                        disabled={claimingNft ? 1 : 0}
+                        onClick={(e) => {
+                          e.preventDefault();
+                          maxMintAmount();
+                          getData();
+                        }}
+                      >
+                        Max
                       </StyledRoundButton>
                     </s.Container>
                     <s.SpacerSmall />
